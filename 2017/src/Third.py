@@ -33,3 +33,36 @@ for s in sides:
         index = s.index(target) + 1
         print(f"Part 1: {round(abs(index-side/2))+layer_count}")     # Add distances together and print
 
+
+def sum_neighbours(m, i, j):
+    region = m[max(0, i-1): i+2,
+                    max(0, j-1): j+2]
+    return np.sum(region) - m[i, j]
+
+
+matrix = np.zeros((side, side))
+coordinates = [int(side/2), int(side/2)]
+matrix[coordinates[0]][coordinates[1]] = 1
+side = 1
+counter = 1
+
+while counter < target:
+    side += 2
+    layer_pos = 1
+    coordinates[1] += 1
+    digits_in_layer = side*4-4
+    while layer_pos <= digits_in_layer:
+        counter = sum_neighbours(matrix, coordinates[0], coordinates[1])
+        if counter > target:
+            print(int(counter))
+            break
+        matrix[coordinates[0]][coordinates[1]] = counter
+        if layer_pos/digits_in_layer < 0.25:
+            coordinates[0] -= 1
+        elif layer_pos/digits_in_layer < 0.5:
+            coordinates[1] -= 1
+        elif layer_pos/digits_in_layer < 0.75:
+            coordinates[0] += 1
+        elif layer_pos/digits_in_layer < 1:
+            coordinates[1] += 1
+        layer_pos += 1
