@@ -1,8 +1,7 @@
-import numpy as np
-
 input_file = open("../inputs/twelfth.txt")
 
 pipes = [line.replace("\n", "") for line in input_file.readlines()]
+
 
 def find_group_with(program):
     visited = []

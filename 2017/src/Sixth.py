@@ -10,13 +10,15 @@ while keys.count(key) < 2:
     blocks = banks[index]
     banks[index] = 0
     while blocks > 0:
-        index += 1
-        if index >= len(banks):
-            index = 0
+        index = (index + 1) % len(banks)
         banks[index] += 1
         blocks -= 1
     key = str(banks)
     keys.append(key)
     runs += 1
 
-print(runs)
+print("Part 1: ", runs)
+
+cycle_size = [i for i, j in enumerate(keys) if j == key]
+
+print("Part 2: ", cycle_size[1]-cycle_size[0])
