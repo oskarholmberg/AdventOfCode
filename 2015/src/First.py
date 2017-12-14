@@ -1,4 +1,4 @@
-input_file = open("../inputs/first.txt")
+input_file = open("../inputs/Day_1.txt")
 
 stream = list(input_file.readline())
 floor = 0

@@ -1,6 +1,6 @@
 
 
-input_file = open("../inputs/second.txt", 'r')
+input_file = open("../inputs/Day_2.txt", 'r')
 
 total_p1 = 0
 total_p2 = 0

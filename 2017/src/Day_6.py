@@ -1,4 +1,4 @@
-input_file = open("../inputs/sixth.txt")
+input_file = open("../inputs/Day_6.txt")
 
 banks = [int(line) for line in input_file.readline().split()]
 keys = []

@@ -1,4 +1,4 @@
-input_file = open("../inputs/seventh.txt")
+input_file = open("../inputs/Day_7.txt")
 
 
 def calc_weight(parent):

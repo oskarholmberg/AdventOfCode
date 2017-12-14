@@ -1,4 +1,4 @@
-input_file = open("../inputs/twelfth.txt")
+input_file = open("../inputs/Day_12.txt")
 
 pipes = [line.replace("\n", "") for line in input_file.readlines()]
 

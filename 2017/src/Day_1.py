@@ -1,6 +1,6 @@
 
 
-input_file = open("../inputs/first.txt", 'r')
+input_file = open("../inputs/Day_1.txt", 'r')
 
 puzzle_input = list(input_file.readline())
 

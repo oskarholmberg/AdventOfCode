@@ -1,5 +1,5 @@
 
-input_file = open("../inputs/ninth.txt")
+input_file = open("../inputs/Day_9.txt")
 
 
 def remove_cancellations(l):

@@ -1,6 +1,6 @@
 import math
 
-input_file = open("../inputs/eleventh.txt")
+input_file = open("../inputs/Day_11.txt")
 
 directions = list(input_file.readline())
 

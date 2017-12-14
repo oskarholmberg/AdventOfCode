@@ -1,4 +1,4 @@
-input_file = open("../inputs/fifth.txt")
+input_file = open("../inputs/Day_5.txt")
 
 jump_instructions = []
 
@@ -17,7 +17,7 @@ while next_index < len(jump_instructions):
 
 print("Part 1: ", jumps)
 
-input_file = open("../inputs/fifth.txt")
+input_file = open("../inputs/Day_5.txt")
 
 jump_instructions = []
 

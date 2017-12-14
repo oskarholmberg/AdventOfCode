@@ -1,5 +1,5 @@
 
-input_file = open("../inputs/eigth.txt")
+input_file = open("../inputs/Day_8.txt")
 
 registers = {}
 commands = []

@@ -1,4 +1,4 @@
-input_file = open("../inputs/fourth.txt", 'r')
+input_file = open("../inputs/Day_4.txt", 'r')
 
 invalid_phrases_p1 = 0
 invalid_phrases_p2 = 0

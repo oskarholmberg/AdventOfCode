@@ -1,4 +1,4 @@
-input_file = open("../inputs/second.txt")
+input_file = open("../inputs/Day_2.txt")
 
 boxes = [box.replace("\n", "") for box in input_file.readlines()]
 

@@ -1,6 +1,6 @@
 import numpy as np
 
-input_file = open("../inputs/third.txt")
+input_file = open("../inputs/Day_3.txt")
 
 directions = list(input_file.readline())
 

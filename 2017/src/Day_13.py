@@ -1,4 +1,4 @@
-input_file = open("../inputs/thirteenth.txt")
+input_file = open("../inputs/Day_13.txt")
 
 lines = input_file.readlines()
 
