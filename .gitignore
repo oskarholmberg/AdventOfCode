@@ -100,4 +100,5 @@ ENV/
 # mypy
 .mypy_cache/
 
+.idea
 2017/images/
