@@ -1,39 +1,33 @@
 import progressbar as pbar
 
 
-class Generator(object):
-    def __init__(self, factor, start_value, multiple_of=1):
-        self.factor = factor
-        self.value = start_value
-        self.divider = 2147483647
-        self.multiple_of = multiple_of
-
-    def next(self):
-        self.value = self.value * self.factor % self.divider
-        while self.value % self.multiple_of != 0:
-            self.value = self.value * self.factor % self.divider
-        return self.value
+def generator(value, factor, multiple_of=1):
+    while True:
+        value = value * factor % 2147483647
+        while value % multiple_of != 0:
+            value = value * factor % 2147483647
+        yield value
 
 
 bar = pbar.ProgressBar()
 
-gen_a_factor = 16807
-gen_a_start = 591
-gen_a_multiple = 1
-gen_b_factor = 48271
-gen_b_start = 393
-gen_b_multiple = 1
+a_1 = generator(591, 16807)
+b_1 = generator(393, 48271)
 
-number_of_pairs_to_check = 40000000
+a_2 = generator(591, 16807, multiple_of=4)
+b_2 = generator(393, 48271, multiple_of=8)
 
-gen_a = Generator(gen_a_factor, gen_a_start, gen_a_multiple)
-gen_b = Generator(gen_b_factor, gen_b_start, gen_b_multiple)
-count = 0
-for i in bar(range(number_of_pairs_to_check)):
-    if gen_a.next() & 0xffff == gen_b.next() & 0xffff:
-        count += 1
+count_1 = 0
+count_2 = 0
+for i in bar(range(40000000)):
+    if next(a_1) & 0xffff == next(b_1) & 0xffff:
+        count_1 += 1
+    if i % 8 == 0:
+        if next(a_2) & 0xffff == next(b_2) & 0xffff:
+            count_2 += 1
 
-print("Answer:", count)
+print("Day 15 part 1:", count_1)
+print("Day 15 part 2:", count_2)
 
 
 
